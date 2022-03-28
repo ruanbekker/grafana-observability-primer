@@ -29,7 +29,7 @@ class SpanFormatter(logging.Formatter):
         return super().format(record)
 
 resource = Resource(attributes={
-    "service.name": "service-bar"
+    "service.name": "service-api"
 })
 
 trace.set_tracer_provider(
@@ -106,16 +106,18 @@ def after_request(response):
 
 @app.route("/users", methods=["POST"])
 def add_user():
-    username = request.json['username']
-    email = request.json['email']
-    try:
-        new_user = User(username, email)
-        db.session.add(new_user)
-        db.session.commit()
-        result = user_schema.dump(new_user)
-    except IntegrityError:
-        db.session.rollback()
-        result = {"message": "user {} already exists".format(username)}
+    tracer = trace.get_tracer(__name__)
+    with tracer.start_as_current_span("db-entry"):
+        username = request.json['username']
+        email = request.json['email']
+        try:
+            new_user = User(username, email)
+            db.session.add(new_user)
+            db.session.commit()
+            result = user_schema.dump(new_user)
+        except IntegrityError:
+            db.session.rollback()
+            result = {"message": "user {} already exists".format(username)}
     return jsonify(result)
 
 @app.route("/users", methods=["GET"])
