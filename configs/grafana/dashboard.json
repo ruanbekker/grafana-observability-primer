@@ -1,969 +1,867 @@
 {
-    "annotations": {
-      "list": [
-        {
-          "builtIn": 1,
-          "datasource": "-- Grafana --",
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
-          "target": {
-            "limit": 100,
-            "matchAny": false,
-            "tags": [],
-            "type": "dashboard"
-          },
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
           "type": "dashboard"
-        }
-      ]
-    },
-    "editable": true,
-    "fiscalYearStartMonth": 0,
-    "graphTooltip": 0,
-    "id": 1,
-    "iteration": 1648491477236,
-    "links": [],
-    "liveNow": false,
-    "panels": [
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
         },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 5,
-          "w": 12,
-          "x": 0,
-          "y": 0
-        },
-        "hiddenSeries": false,
-        "id": 9,
-        "legend": {
-          "avg": false,
-          "current": true,
-          "max": true,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "8.4.4",
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Tgeh-Fs7z"
-            },
-            "exemplar": true,
-            "expr": "rate(process_cpu_seconds_total{job=~\"$job\"}[30s])",
-            "format": "time_series",
-            "interval": "",
-            "intervalFactor": 1,
-            "legendFormat": "cpu",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeRegions": [],
-        "title": "CPU usage",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "percentunit",
-            "logBase": 1,
-            "show": true
-          },
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 5,
-          "w": 12,
-          "x": 12,
-          "y": 0
-        },
-        "hiddenSeries": false,
-        "id": 8,
-        "legend": {
-          "avg": false,
-          "current": true,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "8.4.4",
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Tgeh-Fs7z"
-            },
-            "exemplar": true,
-            "expr": "process_resident_memory_bytes{job=~\"$job\"}",
-            "format": "time_series",
-            "interval": "",
-            "intervalFactor": 1,
-            "legendFormat": "mem",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeRegions": [],
-        "title": "Memory usage",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "decbytes",
-            "logBase": 1,
-            "show": true
-          },
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 5,
-          "w": 24,
-          "x": 0,
-          "y": 5
-        },
-        "hiddenSeries": false,
-        "id": 2,
-        "legend": {
-          "alignAsTable": true,
-          "avg": true,
-          "current": true,
-          "max": false,
-          "min": false,
-          "rightSide": true,
-          "show": true,
-          "sort": "avg",
-          "sortDesc": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "8.4.4",
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Tgeh-Fs7z"
-            },
-            "exemplar": true,
-            "expr": "rate(flask_http_request_duration_seconds_count{status=\"200\"}[30s])",
-            "format": "time_series",
-            "interval": "",
-            "intervalFactor": 1,
-            "legendFormat": "{{ path }}",
-            "refId": "A"
-          },
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Tgeh-Fs7z"
-            },
-            "exemplar": true,
-            "expr": "",
-            "format": "time_series",
-            "hide": false,
-            "interval": "",
-            "intervalFactor": 1,
-            "legendFormat": "",
-            "refId": "B"
-          }
-        ],
-        "thresholds": [],
-        "timeRegions": [],
-        "title": "Requests per second",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          },
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": true,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Tgeh-Fs7z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 5,
-          "w": 24,
-          "x": 0,
-          "y": 10
-        },
-        "hiddenSeries": false,
-        "id": 13,
-        "legend": {
-          "avg": true,
-          "current": false,
-          "max": true,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": true
-        },
-        "lines": false,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "8.4.4",
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [
-          {
-            "alias": "HTTP 500",
-            "color": "#bf1b00"
-          }
-        ],
-        "spaceLength": 10,
-        "stack": true,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "increase(flask_http_request_total[1m])",
-            "format": "time_series",
-            "interval": "",
-            "intervalFactor": 1,
-            "legendFormat": "HTTP {{ status }}",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeRegions": [],
-        "title": "Total requests per minute",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "short",
-            "logBase": 1,
-            "min": "0",
-            "show": true
-          },
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Tgeh-Fs7z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 5,
-          "w": 24,
-          "x": 0,
-          "y": 15
-        },
-        "hiddenSeries": false,
-        "id": 6,
-        "legend": {
-          "alignAsTable": true,
-          "avg": false,
-          "current": true,
-          "max": false,
-          "min": false,
-          "rightSide": true,
-          "show": true,
-          "sort": "avg",
-          "sortDesc": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "8.4.4",
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "rate(flask_http_request_duration_seconds_sum{status=\"200\"}[30s])\n/\nrate(flask_http_request_duration_seconds_count{status=\"200\"}[30s])",
-            "format": "time_series",
-            "interval": "",
-            "intervalFactor": 1,
-            "legendFormat": "{{ path }}",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeRegions": [],
-        "title": "Average response time [30s]",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "s",
-            "label": "",
-            "logBase": 1,
-            "show": true
-          },
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Tgeh-Fs7z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 5,
-          "w": 12,
-          "x": 0,
-          "y": 20
-        },
-        "hiddenSeries": false,
-        "id": 4,
-        "legend": {
-          "avg": true,
-          "current": true,
-          "max": true,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "8.4.4",
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [
-          {
-            "alias": "errors",
-            "color": "#c15c17"
-          }
-        ],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "sum(rate(flask_http_request_duration_seconds_count{status!=\"200\"}[30s]))",
-            "format": "time_series",
-            "interval": "",
-            "intervalFactor": 1,
-            "legendFormat": "errors",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeRegions": [],
-        "title": "Errors per second",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          },
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Tgeh-Fs7z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 5,
-          "w": 12,
-          "x": 12,
-          "y": 20
-        },
-        "hiddenSeries": false,
-        "id": 11,
-        "legend": {
-          "alignAsTable": true,
-          "avg": false,
-          "current": true,
-          "max": false,
-          "min": false,
-          "rightSide": true,
-          "show": true,
-          "sort": "current",
-          "sortDesc": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "8.4.4",
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "increase(flask_http_request_duration_seconds_bucket{status=\"200\",le=\"0.25\"}[30s]) \n/ ignoring (le) increase(flask_http_request_duration_seconds_count{status=\"200\"}[30s])",
-            "format": "time_series",
-            "instant": false,
-            "interval": "",
-            "intervalFactor": 1,
-            "legendFormat": "{{ path }}",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeRegions": [],
-        "title": "Requests under 250ms",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "percentunit",
-            "logBase": 1,
-            "max": "1",
-            "min": "0",
-            "show": true
-          },
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Tgeh-Fs7z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 5,
-          "w": 24,
-          "x": 0,
-          "y": 25
-        },
-        "hiddenSeries": false,
-        "id": 16,
-        "legend": {
-          "alignAsTable": true,
-          "avg": true,
-          "current": true,
-          "max": true,
-          "min": true,
-          "rightSide": true,
-          "show": true,
-          "sort": "avg",
-          "sortDesc": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "8.4.4",
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "histogram_quantile(0.9, rate(flask_http_request_duration_seconds_bucket{status=\"200\"}[30s]))",
-            "format": "time_series",
-            "interval": "",
-            "intervalFactor": 1,
-            "legendFormat": "{{ path }}",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeRegions": [],
-        "title": "Request duration [s] - p90",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          },
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Tgeh-Fs7z"
-        },
-        "description": "",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 24,
-          "x": 0,
-          "y": 30
-        },
-        "hiddenSeries": false,
-        "id": 15,
-        "legend": {
-          "alignAsTable": true,
-          "avg": true,
-          "current": true,
-          "max": true,
-          "min": true,
-          "rightSide": true,
-          "show": true,
-          "sort": "avg",
-          "sortDesc": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "8.4.4",
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "histogram_quantile(0.5, rate(flask_http_request_duration_seconds_bucket{status=\"200\"}[30s]))",
-            "format": "time_series",
-            "interval": "",
-            "intervalFactor": 1,
-            "legendFormat": "{{ path }}",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeRegions": [],
-        "title": "Request duration [s] - p50",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "none",
-            "logBase": 1,
-            "show": true
-          },
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
+        "type": "dashboard"
       }
-    ],
-    "refresh": "5s",
-    "schemaVersion": 35,
-    "style": "dark",
-    "tags": [],
-    "templating": {
-      "list": [
-        {
-          "current": {
-            "selected": false,
-            "text": "Prometheus",
-            "value": "Prometheus"
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
           },
-          "hide": 0,
-          "includeAll": false,
-          "label": "Datasource",
-          "multi": false,
-          "name": "DS_PROMETHEUS",
-          "options": [],
-          "query": "prometheus",
-          "refresh": 1,
-          "regex": "",
-          "skipUrlSync": false,
-          "type": "datasource"
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 2,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 13,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
         {
-          "current": {
-            "selected": false,
-            "text": "flask-app",
-            "value": "flask-app"
-          },
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "PBFA97CFB590B2093"
           },
-          "definition": "label_values(process_resident_memory_bytes, job)",
-          "hide": 0,
-          "includeAll": false,
-          "label": "Job",
-          "multi": false,
-          "name": "job",
-          "options": [],
-          "query": {
-            "query": "label_values(process_resident_memory_bytes, job)",
-            "refId": "StandardVariableQuery"
-          },
-          "refresh": 1,
-          "regex": "/.*flask.*/",
-          "skipUrlSync": false,
-          "sort": 0,
-          "type": "query"
+          "exemplar": true,
+          "expr": "rate(process_cpu_seconds_total{job=\"flask-app\"}[30s])",
+          "interval": "",
+          "legendFormat": "{{job}}",
+          "refId": "A"
         }
-      ]
+      ],
+      "title": "CPU Utilisation",
+      "type": "timeseries"
     },
-    "time": {
-      "from": "now-15m",
-      "to": "now"
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 11,
+        "x": 13,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "process_resident_memory_bytes{job=\"flask-app\"}",
+          "interval": "",
+          "legendFormat": "{{job}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Memory Usage",
+      "type": "timeseries"
     },
-    "timepicker": {
-      "refresh_intervals": [],
-      "time_options": [
-        "5m",
-        "15m",
-        "1h",
-        "6h",
-        "12h",
-        "24h",
-        "2d",
-        "7d",
-        "30d"
-      ]
+    {
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 6,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "rate(flask_http_request_duration_seconds_count{status=\"200\"}[30s])",
+          "interval": "",
+          "legendFormat": "{{path}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Requests per Second",
+      "type": "timeseries"
     },
-    "timezone": "",
-    "title": "Flask Metrics Dashboard",
-    "uid": "_eX4mpl3",
-    "version": 3,
-    "weekStart": ""
-  }
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 13
+      },
+      "id": 8,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "increase(flask_http_request_total[1m])",
+          "interval": "",
+          "legendFormat": "HTTP {{ method }} {{ status }}",
+          "refId": "A"
+        }
+      ],
+      "title": "Total Requests per Minute",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 19
+      },
+      "id": 10,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "rate(flask_http_request_duration_seconds_sum{status=\"200\"}[30s])\n/ rate(flask_http_request_duration_seconds_count{status=\"200\"}[30s])",
+          "interval": "",
+          "legendFormat": "2xx {{ method }}: {{ path }}",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "rate(flask_http_request_duration_seconds_sum{status=~\"4.+\"}[30s])\n/ rate(flask_http_request_duration_seconds_count{status=\"4.+\"}[30s])",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "4xx {{ method }}: {{ path }}",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "rate(flask_http_request_duration_seconds_sum{status=~\"5.+\"}[30s])\n/ rate(flask_http_request_duration_seconds_count{status=\"5.+\"}[30s])",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "5xx {{ method }}: {{ path }}",
+          "refId": "C"
+        }
+      ],
+      "title": "Average Response Time [30s]",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 27
+      },
+      "id": 11,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "sum(rate(flask_http_request_duration_seconds_count{status!=\"200\"}[30s]))",
+          "interval": "",
+          "legendFormat": "HTTP {{ method }} {{ status }}",
+          "refId": "A"
+        }
+      ],
+      "title": "Errors per Second",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 34
+      },
+      "id": 13,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "increase(flask_http_request_duration_seconds_bucket{status=\"200\",le=\"0.25\"}[30s]) / ignoring (le) increase(flask_http_request_duration_seconds_count{status=\"200\"}[30s])",
+          "interval": "",
+          "legendFormat": "{{ method }}: {{ path }}",
+          "refId": "A"
+        }
+      ],
+      "title": "Requests under 250ms",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 2,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 40
+      },
+      "id": 14,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.9, rate(flask_http_request_duration_seconds_bucket{status=\"200\"}[30s]))",
+          "interval": "",
+          "legendFormat": "{{ method }}: {{ path }}",
+          "refId": "A"
+        }
+      ],
+      "title": "Request duration [s] - p90",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 2,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 46
+      },
+      "id": 15,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.5, rate(flask_http_request_duration_seconds_bucket{status=\"200\"}[30s]))",
+          "interval": "",
+          "legendFormat": "{{ method }}: {{ path }}",
+          "refId": "A"
+        }
+      ],
+      "title": "Request duration [s] - p50",
+      "type": "timeseries"
+    }
+  ],
+  "schemaVersion": 35,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Application Metrics",
+  "uid": "j0VZzcy7z",
+  "version": 3,
+  "weekStart": ""
+}

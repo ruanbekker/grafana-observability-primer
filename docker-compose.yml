@@ -6,6 +6,8 @@ services:
     restart: unless-stopped
     networks:
       - docknet
+    depends_on:
+      - prometheus
     ports:
       - 5000:5000
 
@@ -23,7 +25,7 @@ services:
       - docknet
 
   grafana:
-    image: grafana/grafana:8.4.4
+    image: grafana/grafana:8.4.2
     container_name: grafana
     restart: unless-stopped
     depends_on:
@@ -32,8 +34,8 @@ services:
       - 3000:3000
     volumes:
       - ./configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
-      #- ./configs/grafana/ds_prometheus.yml:/etc/grafana/provisioning/dashboards/ds_prometheus.yml
-      #- ./configs/grafana/dashboard.json:/etc/grafana/provisioning/dashboards/dashboard.json
+      - ./configs/grafana/ds_prometheus.yml:/etc/grafana/provisioning/dashboards/ds_prometheus.yml
+      - ./configs/grafana/dashboard.json:/etc/grafana/provisioning/dashboards/dashboard.json
     env_file:
       - ./docker.env
     networks:

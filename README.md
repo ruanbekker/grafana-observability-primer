@@ -36,3 +36,22 @@ curl -H 'Content-Type: application/json' http://localhost:5000/users
 # create user
 curl -XPOST -H 'Content-Type: application/json' http://localhost:5000/users -d '{"username": "ruan", "email": "ruan@localhost"}'
 ```
+
+## grafana screenshots
+
+CPU and Memory:
+
+![image](https://user-images.githubusercontent.com/567298/160496251-76fea7a6-11fa-419c-a9fc-2f9b2c2f2604.png)
+
+Requests per Second:
+
+![image](https://user-images.githubusercontent.com/567298/160496321-3b42bdf3-ce19-4c68-b0bd-4961c9fac24c.png)
+
+Average Response Time:
+
+![image](https://user-images.githubusercontent.com/567298/160496357-08a0d009-265f-4cd7-ad02-635d7e1d58f1.png)
+
+Response Duration:
+
+![image](https://user-images.githubusercontent.com/567298/160496393-8a65a499-882a-49ad-8f7d-1157fff4063a.png)
+
