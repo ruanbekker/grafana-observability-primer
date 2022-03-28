@@ -4,12 +4,44 @@ services:
     build: ./app
     container_name: app
     restart: unless-stopped
+    environment:
+      - AGENT_HOSTNAME=otel-collector
     networks:
       - docknet
     depends_on:
       - prometheus
+      - otel-collector
     ports:
       - 5000:5000
+    
+  otel-collector:
+    image: otel/opentelemetry-collector:0.25.0
+    container_name: otel-collector
+    ports:
+      - "6831:6831"
+      - "14268:14268"
+      - "4317:4317"
+    volumes:
+      - ./configs/otel-collector/otel-collector.yml:/config/otel-collector.yaml
+    command:
+      - --config=/config/otel-collector.yaml
+    depends_on:
+      - tempo
+    networks:
+      - docknet
+
+  tempo:
+    image: grafana/tempo:1.0.0
+    container_name: tempo
+    command: ["-config.file=/etc/tempo.yaml"]
+    ports:
+      - "3100:3100"
+      - "55680:55680"
+    volumes:
+      - ./configs/tempo/tempo.yml:/etc/tempo.yaml
+      #- ./data/tempo:/tmp/tempo
+    networks:
+      - docknet
 
   prometheus:
     image: prom/prometheus:v2.34.0
