@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  app:
+    build: ./app
+    container_name: app
+    restart: unless-stopped
+    networks:
+      - docknet
+    ports:
+      - 5000:5000
+
+  prometheus:
+    image: prom/prometheus:v2.34.0
+    container_name: prometheus
+    restart: unless-stopped
+    ports:
+      - 9090:9090
+    volumes:
+      - ./configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    networks:
+      - docknet
+
+  grafana:
+    image: grafana/grafana:8.4.4
+    container_name: grafana
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+    ports:
+      - 3000:3000
+    volumes:
+      - ./configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+      #- ./configs/grafana/ds_prometheus.yml:/etc/grafana/provisioning/dashboards/ds_prometheus.yml
+      #- ./configs/grafana/dashboard.json:/etc/grafana/provisioning/dashboards/dashboard.json
+    env_file:
+      - ./docker.env
+    networks:
+      - docknet
+
+networks:
+  docknet: 
+    name: docknet
