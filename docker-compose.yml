@@ -64,6 +64,7 @@ services:
       - '--web.console.templates=/etc/prometheus/consoles'
       - '--web.enable-lifecycle'
       - '--web.enable-remote-write-receiver'
+      #- '--enable-feature=exemplar-storage'
     networks:
       - docknet
 
