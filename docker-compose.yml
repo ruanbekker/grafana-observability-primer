@@ -31,12 +31,17 @@ services:
       - docknet
 
   tempo:
-    image: grafana/tempo:1.0.0
+    image: grafana/tempo:2.0.1
     container_name: tempo
     command: ["-config.file=/etc/tempo.yaml"]
     ports:
       - "3100:3100"
       - "55680:55680"
+      #- "14268:14268"  # jaeger ingest
+      #- "3200:3200"   # tempo
+      #- "4317:4317"  # otlp grpc
+      #- "4318:4318"  # otlp http
+      #- "9411:9411"   # zipkin
     volumes:
       - ./configs/tempo/tempo.yml:/etc/tempo.yaml
       #- ./data/tempo:/tmp/tempo
@@ -44,7 +49,7 @@ services:
       - docknet
 
   prometheus:
-    image: prom/prometheus:v2.34.0
+    image: prom/prometheus:v2.37.6
     container_name: prometheus
     restart: unless-stopped
     ports:
@@ -53,11 +58,17 @@ services:
       - ./configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/data'
+      - '--storage.tsdb.retention.time=2d'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+      - '--web.enable-remote-write-receiver'
     networks:
       - docknet
 
   grafana:
-    image: grafana/grafana:8.4.2
+    image: grafana/grafana:9.4.3
     container_name: grafana
     restart: unless-stopped
     depends_on:

@@ -1,3 +1,4 @@
+# https://github.com/grafana/tempo/blob/main/example/docker-compose/shared/tempo.yaml
 auth_enabled: false
 
 server:
@@ -45,3 +46,17 @@ storage:
     pool:
       max_workers: 100                 # the worker pool mainly drives querying, but is also used for polling the blocklist
       queue_depth: 10000
+
+metrics_generator:
+  registry:
+    external_labels:
+      source: tempo
+      cluster: docker-compose
+  storage:
+    path: /tmp/tempo/generator/wal
+    remote_write:
+      - url: http://prometheus:9090/api/v1/write
+        send_exemplars: true
+
+overrides:
+  metrics_generator_processors: [service-graphs, span-metrics] # enables metrics generator
