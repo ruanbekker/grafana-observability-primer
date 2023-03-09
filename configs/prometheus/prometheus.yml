@@ -10,6 +10,10 @@ scrape_configs:
     static_configs:
     - targets: ['prometheus:9090']
 
+  - job_name: 'tempo'
+    static_configs:
+      - targets: [ 'tempo:3100' ]
+
   - job_name: 'flask-app'
     scrape_interval: 5s
     static_configs:
