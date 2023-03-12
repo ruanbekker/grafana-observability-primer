@@ -16,7 +16,7 @@ from opentelemetry.sdk.resources import SERVICE_NAME, Resource
 from random import random
 from time import strftime
 
-AGENT_HOSTNAME = os.getenv("AGENT_HOSTNAME", "localhost")
+AGENT_HOSTNAME = os.getenv("AGENT_HOSTNAME", "otel-collector")
 AGENT_PORT = int(os.getenv("AGENT_PORT", "4317"))
 
 class SpanFormatter(logging.Formatter):
@@ -37,6 +37,13 @@ trace.set_tracer_provider(
 )
 otlp_exporter = OTLPSpanExporter(endpoint=f"{AGENT_HOSTNAME}:{AGENT_PORT}", insecure=True)
 trace.get_tracer_provider().add_span_processor(BatchSpanProcessor(otlp_exporter))
+
+# trace_provider = TracerProvider(
+#     resource=Resource.create({"service.name": "my-flask-app"}),
+# )
+# trace_provider.add_span_processor(
+#     SimpleExportSpanProcessor(otlp_exporter)
+# )
 
 #logging.basicConfig(level=logging.INFO)
 #logging.info("LOGLEVEL=INFO")

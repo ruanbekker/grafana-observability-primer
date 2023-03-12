@@ -1,3 +1,4 @@
+# https://github.com/grafana/tempo/blob/main/example/docker-compose/shared/tempo.yaml
 auth_enabled: false
 
 server:
@@ -11,11 +12,11 @@ distributor:
         grpc:                          # for a production deployment you should only enable the receivers you need!
         thrift_binary:
         thrift_compact:
-    zipkin:
+    zipkin:                            # :9411 zipkin
     otlp:
       protocols:
-        http:
-        grpc:
+        http:                          # :4318 otlp http
+        grpc:                          # :4317 otlp grpc
     opencensus:
 
 ingester:
@@ -35,13 +36,27 @@ storage:
     backend: local                     # backend configuration to use
     block:
       bloom_filter_false_positive: .05 # bloom filter false positive rate.  lower values create larger filters but fewer false positives
-      index_downsample_bytes: 1000     # number of bytes per index record
-      encoding: zstd                   # block encoding/compression.  options: none, gzip, lz4-64k, lz4-256k, lz4-1M, lz4, snappy, zstd
+      v2_index_downsample_bytes: 1000     # number of bytes per index record
+      v2_encoding: zstd                   # block encoding/compression.  options: none, gzip, lz4-64k, lz4-256k, lz4-1M, lz4, snappy, zstd
     wal:
       path: /tmp/tempo/wal             # where to store the the wal locally
-      encoding: none                   # wal encoding/compression.  options: none, gzip, lz4-64k, lz4-256k, lz4-1M, lz4, snappy, zstd
+      v2_encoding: none                   # wal encoding/compression.  options: none, gzip, lz4-64k, lz4-256k, lz4-1M, lz4, snappy, zstd
     local:
       path: /tmp/tempo/blocks
     pool:
       max_workers: 100                 # the worker pool mainly drives querying, but is also used for polling the blocklist
       queue_depth: 10000
+
+metrics_generator:
+  registry:
+    external_labels:
+      source: tempo
+      cluster: docker-compose
+  storage:
+    path: /tmp/tempo/generator/wal
+    remote_write:
+      - url: http://prometheus:9090/api/v1/write
+        send_exemplars: true
+
+overrides:
+  metrics_generator_processors: [service-graphs, span-metrics] # enables metrics generator
