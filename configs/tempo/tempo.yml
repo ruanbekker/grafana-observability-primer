@@ -12,11 +12,11 @@ distributor:
         grpc:                          # for a production deployment you should only enable the receivers you need!
         thrift_binary:
         thrift_compact:
-    zipkin:
+    zipkin:                            # :9411 zipkin
     otlp:
       protocols:
-        http:
-        grpc:
+        http:                          # :4318 otlp http
+        grpc:                          # :4317 otlp grpc
     opencensus:
 
 ingester:
