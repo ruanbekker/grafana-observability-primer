@@ -11,7 +11,7 @@ clients:
   - url: http://loki:3100/loki/api/v1/push
 
 scrape_configs:
-  - job_name: flog_scrape 
+  - job_name: docker-socket-scrape 
     docker_sd_configs:
       - host: unix:///var/run/docker.sock
         refresh_interval: 5s
@@ -37,3 +37,7 @@ scrape_configs:
             #message: message
             level: level
             #output: 'message'
+      - match:
+          selector: '{job="containerlogs", container="app"} |= "/metrics?"'
+          action: drop
+          drop_counter_reason: loki_metrics_endpoint
