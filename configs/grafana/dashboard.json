@@ -945,8 +945,8 @@
             "type": "loki",
             "uid": "loki"
           },
-          "editorMode": "builder",
-          "expr": "{container=\"app\"} |= ``",
+          "editorMode": "code",
+          "expr": "{container=\"app\"} |= `` | logfmt",
           "queryType": "range",
           "refId": "A"
         }
