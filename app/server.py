@@ -16,7 +16,7 @@ from opentelemetry.sdk.resources import SERVICE_NAME, Resource
 from random import random
 from time import strftime
 
-AGENT_HOSTNAME = os.getenv("AGENT_HOSTNAME", "otel-collector")
+AGENT_HOSTNAME = os.getenv("AGENT_HOSTNAME", "tempo")
 AGENT_PORT = int(os.getenv("AGENT_PORT", "4317"))
 
 class SpanFormatter(logging.Formatter):
