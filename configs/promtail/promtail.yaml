@@ -38,6 +38,6 @@ scrape_configs:
             level: level
             #output: 'message'
       - match:
-          selector: '{job="containerlogs", container="app"} != "/metrics?"'
+          selector: '{job="containerlogs", container="app"} |= "/metrics?"'
           action: drop
           drop_counter_reason: loki_metrics_endpoint
