@@ -55,3 +55,10 @@ Response Duration:
 
 ![image](https://user-images.githubusercontent.com/567298/160496393-8a65a499-882a-49ad-8f7d-1157fff4063a.png)
 
+View the logs from our dashboard:
+
+![logs](https://user-images.githubusercontent.com/567298/227045215-8d39086f-b329-485a-85c4-d5b7659d545f.png)
+
+After we created a user, we can explore our logs dashboard and view the traceid:
+
+![logs-to-traces](https://user-images.githubusercontent.com/567298/227044932-ab6f30e0-ff09-48dc-b8ec-24860732ccfb.png)
