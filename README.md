@@ -62,3 +62,7 @@ View the logs from our dashboard:
 After we created a user, we can explore our logs dashboard and view the traceid:
 
 ![logs-to-traces](https://user-images.githubusercontent.com/567298/227044932-ab6f30e0-ff09-48dc-b8ec-24860732ccfb.png)
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/ruanbekker/grafana-observability-primer.svg)](https://starchart.cc/ruanbekker/grafana-observability-primer)
