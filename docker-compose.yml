@@ -55,7 +55,7 @@ services:
       - docknet
 
   grafana:
-    image: grafana/grafana:9.4.3
+    image: grafana/grafana:9.5.3
     container_name: grafana
     restart: unless-stopped
     depends_on:
@@ -73,7 +73,7 @@ services:
       - docknet
 
   loki:
-    image: grafana/loki:2.7.4
+    image: grafana/loki:2.8.2
     container_name: loki
     restart: unless-stopped
     ports:
